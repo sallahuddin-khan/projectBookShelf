@@ -1,0 +1,14 @@
+<script(src='/bootstrap/js/bootstrap.min.js')></script>
+<script(src='/angular/angular.min.js') ></script>
+<script(src='/angular/BookShelfApp.js')></script>
+<p>
+    <a class="btn btn-primary btn-large" href="/AllBooks/new" >  ADD NEW BOOK</a> 
+    </p>
+    <div class="container">
+            <div class="row text-center" ng-app="BookShelfApp" ng-controller="bookController" style="display:flex flex-wrap:wrap;"; >
+                <%console.log(data.books);%>
+                    <h1 ng-repeat="name in data.books">{{name}}</h1>
+               
+                </div>
+                </div>
+            
