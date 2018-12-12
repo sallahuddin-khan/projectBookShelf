@@ -1,0 +1,39 @@
+<% include partials/header %>
+<div class ="container">
+    <div class ="row">
+        <div class="col-md-3">
+            <p class ="lead"> BookShelf</p>
+                <div class="list-group">
+                    <div class ="list-group-item">
+                    
+                    <p >Submitted By<strong> <%= book.user.username %></strong></p>
+                    <p>Phone Number<strong> <%= phoneNumber %></strong></p>
+                    </div>
+                   
+                     
+                </div>
+        </div>
+        <div class="col-md-9">
+            <div class ="thumbnail">
+               <img  class ="img-responsive"src="<%= book.image%>">
+                <div class="caption-full">
+                    <h4 class="pull-right">
+                       <%=book.price%>Rs
+                    </br>
+                    type of Book:<%=book.genre%>
+                    </h4>
+                     <h1><%=book.name%></h1>
+                    <h5>Written By:<strong><%=book.Author%> </strong></h5>
+                    <h5>Condition of Book:<strong><%=book.condition%>/10 </strong></h5>
+                    
+                </div>
+            </div>
+            <div class ="well">
+                <div class="col-md-9">
+                    <h4><%=book.description%></h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+<% include partials/footer %>

@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row text-center" style="display:flex flex-wrap:wrap;"; >
+    <% AllBooks.forEach(function(Books){ %>
+        
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= Books.image %> ">
+                    <div class="caption">
+                        <h4><%= Books.name %></h4> 
+                    </div>
+                    <a href="/DeleteBookConfirm/<%= Books._id %>/<%= Books.name %>" class="btn btn-primary">
+                    Delete 
+                    </a>
+                    
+                </div>
+            </div>  
+    <% }); %>
+    </div>
+</div>
+<% include partials/footer %> 

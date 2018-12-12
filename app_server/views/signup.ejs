@@ -1,0 +1,38 @@
+<% include partials/header %>
+<div class = "positioner">
+    <div class="container container-form ">
+            <h1 style="text-align:center;">Sign Up</h1>                
+                <form action="/AddUser" method="POST" id = "SignUp">
+                    <div class="form-group">
+                    <input class="form-control" id="emailUp" type="email" name="email" placeholder="Email" required >
+                    </div>
+                    <div id='errorEmailUp'></div>
+                    <div class="form-group">
+                    <input class="form-control" id="UserUp" type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div id='errorUserUp'></div>
+                    <div class="form-group">
+                    <input class="form-control" type="password" id ="password" name="password" placeholder="Password" required minlength="8">
+                    </div>
+                    <div class="form-group">
+                    <input class="form-control" type="password" id="passwordConf" name="passwordConf" placeholder="Confirm password" required minlength="8" equalTo = "#password">
+                    </div>
+                    <div id='errorSignIn'></div>
+                    <div class="form-group">
+                        <input class="form-control" type= "number" name="phone" placeholder="Phone Number" required minlength="7">
+                    </div>
+                    
+                    <div class="error-login">
+                        <p> <%= msg%> </p>
+                    </div>
+
+                    <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type=submit">SignUp </button>
+                </form>
+    </div>        
+</div>
+<% include partials/footer %> 
+
+            
+
+
+                  

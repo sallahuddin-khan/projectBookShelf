@@ -1,0 +1,28 @@
+<% include partials/header1 %>
+<div class = "positioner">
+        <div class="container container-form ">
+                <h1 style="text-align:center;">Sign In</h1>
+                    <form action="/login" method="POST">
+                        <div class="form-group">
+                            <label for="email" class="text-info">Email:</label><br>
+                            <input class="form-control" type="email" name="email" placeholder="abc@gmail.com" required >
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input class="form-control" type="password" name="password" required minlength="8">
+                        </div>
+                        <div class="error-login">
+                            <p> <%= msg%> </p>
+                        </div>
+                        <div class= "btn-bar"> 
+                            <button class="btn btn-lg btn-primary btn-block" type=submit">Login </button>
+                        </div>
+                    </form>
+                       <a href="/AddUser"><button class="btn btn-lg btn-primary btn-block">Signup </button></a>
+            </div>
+            
+</div>
+
+        <% include partials/footer %> 
+        

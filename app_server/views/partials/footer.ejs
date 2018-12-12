@@ -1,0 +1,88 @@
+<p>
+    trade mark BOOK SHELF  2018
+</p>
+<script
+  src="https://code.jquery.com/jquery-1.11.2.js"
+  integrity="sha256-WMJwNbei5YnfOX5dfgVCS5C4waqvc+/0fV7W2uy3DyU="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        $('#emailUp').keyup(function(){
+            var email = $(this).val();
+            if (email.length >= 3) {
+                $.ajax({
+                    url:'/checkavailabilty',
+                    method:'GET',
+                    data:{email:email},
+                    dataType:'json',
+                    success: function (data) {
+                    var divElement = $('#errorEmailUp');
+                    if (!data.EmailNameInUse) {
+                        divElement.text(email + ' already in use');
+                        divElement.css('color', 'red');
+                        $('#submitbtn').attr('disabled',true);
+                    }
+                    else {
+                        divElement.text(email + ' available')
+                        divElement.css('color', 'green');
+                        $('#submitbtn').attr('disabled',false);
+                    }
+                },
+                error: function (err) {
+                    alert(err);
+                }
+                });
+            }
+        });
+        
+        
+        $('#UserUp').keyup(function(){
+            var name = $(this).val();
+            if (name.length >= 3) {
+                $.ajax({
+                    url:'/checkUserNameAvailabilty',
+                    method:'GET',
+                    data:{name:name},
+                    dataType:'json',
+                    success: function (data) {
+                    var divElement1 = $('#errorUserUp');
+                    if (!data.NameInUse) {
+                        divElement1.text(name + ' already in use');
+                        divElement1.css('color', 'red');
+                        $('#submitbtn').attr('disabled',true);
+                    }
+                    else {
+                        divElement1.text(name + ' available')
+                        divElement1.css('color', 'green');
+                        $('#submitbtn').attr('disabled',false);
+                    }
+                },
+                error: function (err) {
+                    alert(err);
+                }
+                });
+            }
+        });
+
+        $('#passwordConf').keyup(function(){
+            var c = $(this).val();
+            var p = $('#password').val();
+            var divElement1 = $('#errorSignIn');
+            if (c!=p) {
+                        divElement1.text('passwords do not');
+                        divElement1.css('color', 'red');
+                        $('#submitbtn').attr('disabled',true);
+                    }
+                    else {
+                        divElement1.text('passwords match')
+                        divElement1.css('color', 'green');
+                        $('#submitbtn').attr('disabled',false);
+                    }
+        });
+    });
+
+</script>
+
+</body>
+</html>

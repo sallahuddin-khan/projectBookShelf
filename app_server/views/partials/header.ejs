@@ -1,0 +1,186 @@
+<!Doctype html>
+<html>
+    <head>
+        
+        <title>
+            BOOK SHELF
+        </title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel = "stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css ">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+        <script src='/bootstrap/js/bootstrap.min.js'></script>
+        <script src='/angular/angular.min.js' ></script>
+        <script src='/angular/BookShelfApp.js'></script>
+    
+
+        <style>
+            body
+            {
+                background-color: #a27250;
+            }
+            .navbar-default
+            {
+                background-color: #6f4e37;
+                height: 100px;
+                font-size: 24px;
+                border-color: #6f4e37;
+            }
+            .navbar-default .navbar-brand
+            {
+                font-size: 50px;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
+                color: black;
+                margin-top: 10px;
+            }
+            
+            #login_but
+            {
+                color:black;
+                margin-top:12%;
+            }
+            
+            #login_but .btn
+            {
+                background-color: #4d3626;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 20px;
+            }
+
+            .container
+            {
+                background-color: #a27250;
+            }
+
+            .jumbotron
+            {
+                background-color: #a27250;
+            }
+           .form-control
+            {
+                align-self: left;
+            }
+
+            .img-category
+            {
+                width: 100%;
+                height: 300px;
+                padding: 10px;
+            }
+            .container-form {
+                border-radius: 5px;
+                background-color:#DFF0D8;
+                padding: 20px;
+                max-width: 500px;
+                height : 530px; 
+            
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                /* display: none; <- Crashes Chrome on hover */
+                -webkit-appearance: none;
+                margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+            }            
+            .container .form-group
+            {
+                padding-top:5px;
+                padding-bottom: 5px;
+            }
+
+            .container-form2
+            {
+                border-radius: 5px;
+                background-color:#DFF0D8;
+                padding: 20px;
+                max-width: 500px;
+                height : 700px; 
+            }
+            .container-form2 .form-group
+            {
+                padding-top:5px;
+                padding-bottom: 5px;
+            }
+            select{
+            margin-left: 10px;
+             width:100%;
+             height:34px;
+             border-radius: 4px;
+            }
+
+
+            .error-login
+            {
+                padding:5px;
+                color:red;
+            }
+            .btn-bar{
+                display: flex;
+                align-items:center;
+                justify-content: space-around;
+                padding-bottom:20px;
+            }
+            .positioner {
+                display: flex;
+                justify-content:center;
+            }
+            .positioner2 {
+                display: flex;
+                justify-content:space-around;
+                align-items: center;
+                flex-wrap: nowrap;
+                margin:10px;
+            }
+            #desc {
+                height: 100px;
+                width: 100%;
+                border-radius: 4px;
+                padding-top: 5px;
+                padding-left: 5px;
+            }
+
+
+
+
+
+        </style>
+    </head>
+    
+        <body   ng-app=BookShelfApp ng-controller="bookController">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"> BookShelf</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right  ">
+                            <% if(session && session.user) { %>
+                                <li><a href="/userDashboard">Dashboard</a> </li>
+                                <li><a href="/AllBooks/new">Add Book</a></li>
+                                <li><a href="/logout">Sign Out</a></li>
+                                <li><a href="/test">Advance Search</a></li>
+                            <%}else {%>
+                                <li><a href="/login">Login</a></li>   
+                                <li><a href="/test">Advance Search</a></li>     
+                            <%}%>                              
+                    </ul>
+                        <form class="form-group row" action="/SearchByTitle"  method="GET">
+                            <div class= "col-xs-12 col-md-12">  
+                                <div class="col-xs-10 col-md-11">
+                                    <input class="form-control" type="search" placeholder="Search" name="title">
+                                </div>
+                                    <button class="btn button-search button-info" type="submit">Search</button>
+                            </div>
+ 
+ 
+                        
+                    </form>
+                </div>
+            </div>
+         </nav>

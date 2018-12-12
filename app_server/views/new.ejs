@@ -1,0 +1,54 @@
+<% include partials/header %>
+    <div class="container container-form2">   
+        <h1 style="text-align:center;">Add Book</h1>             
+        <form action="/AllBooks" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Name" required minlength="3"> 
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="author" placeholder="Author" required minlength="3">
+            </div>
+            <div class = "positioner2">
+            <label for="password" class="text-info">Genre:</label>
+                
+                    <select id="dropdown" name="genre">
+                        <option value="Story">Story</option>
+                        <option value="Poetry">Poetry</option>  
+                        <option value="Literature">Literature</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Biograpgy">Biography</option>
+                        <option value="Others">Others</option>  
+                    </select>
+                </div>
+            <!-- <input class="form-control" type="text" name="category" placeholder="category"> -->
+            <div class = "positioner2">
+                    <label for="password" class="text-info">Condition:</label>
+                        <select id="dropdown" name="condition">
+                                <option value=1>1</option>
+                                <option value=2>2</option>  
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>  
+                                <option value=7>7</option>  
+                                <option value=8>8</option>  
+                                <option value=9>9</option>  
+                                <option value=10>10</option>  
+                        </select>
+                <!-- <input class="form-control" type="text" name="condition" placeholder="condition"> -->
+            </div>
+            <div class="form-group">
+            <input id = "priceinp" class="form-control" type="number" name="price" placeholder="Price" required>
+            </div>
+            <div class="form-group">
+                    <textarea id = "desc" type="text" name="description" placeholder="Description" cols="40" rows="5"></textarea>
+                    </div>        
+            <div>
+                <input class="form-control" type="file" name="image" placeholder="image-url" required>
+            </div>
+            
+            <button class="btn btn-lg btn-primary btn-block" type=submit">Add </button>
+
+        </form>
+    </div>
+<% include partials/footer %> 

@@ -1,0 +1,32 @@
+
+
+<% include partials/headerAngular %>
+
+  
+    
+    
+        
+            <div ng-repeat="book in data.books | filter:query">
+              <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    
+                    <div class="caption">
+                        <h4>{{book.name}}</h4> 
+                    </div>
+                    <a href="/AllBooks/{{book._id}}" class="btn btn-primary">More Info
+                    </a>  
+                    <p ><emp>Submitted By {{book.user.username}}</emp></p>
+                   
+                </div>
+            </div> 
+                
+            </div>
+        
+    
+  </body>
+
+</html>
+
+
+
+               
